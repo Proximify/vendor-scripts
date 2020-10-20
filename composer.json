@@ -1,0 +1,39 @@
+{
+    "name": "proximify/vendor-scripts",
+    "description": "Caller of trusted vendor scripts defined in nested composer.json files.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Proximify Inc",
+            "email": "support@proximify.ca"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Proximify\\": "src"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "proximify/cli-actions": "^1.0",
+        "symfony/finder": "^5.1",
+        "symfony/process": "^5.1"
+    },
+    "scripts": {
+        "post-root-package-install": "Proximify\\VendorScripts::auto",
+        "post-create-project-cmd": "Proximify\\VendorScripts::auto",
+        "pre-install-cmd": "Proximify\\VendorScripts::auto",
+        "post-install-cmd": "Proximify\\VendorScripts::auto",
+        "pre-status-cmd": "Proximify\\VendorScripts::auto",
+        "post-status-cmd": "Proximify\\VendorScripts::auto",
+        "pre-update-cmd": "Proximify\\VendorScripts::auto",
+        "post-update-cmd": "Proximify\\VendorScripts::auto",
+        "pre-package-install": "Proximify\\VendorScripts::auto",
+        "post-package-install": "Proximify\\VendorScripts::auto",
+        "pre-package-update": "Proximify\\VendorScripts::auto",
+        "post-package-update": "Proximify\\VendorScripts::auto",
+        "pre-package-uninstall": "Proximify\\VendorScripts::auto",
+        "post-package-uninstall": "Proximify\\VendorScripts::auto"
+    }
+}
