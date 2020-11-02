@@ -16,9 +16,9 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "proximify/cli-actions": "^1.0",
         "symfony/finder": "^5.1",
-        "symfony/process": "^5.1"
+        "symfony/process": "^5.1",
+        "proximify/cli-actions": "^1.0"
     },
     "scripts": {
         "post-root-package-install": "Proximify\\VendorScripts::auto",

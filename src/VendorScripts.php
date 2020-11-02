@@ -24,7 +24,17 @@ class VendorScripts extends CLIActions
     {
         $env = $options[self::ENV_OPTIONS];
         $action = $env['action'];
-        $vendorDir = $env['vendor-dir'] . '/' . self::TRUSTED_VENDOR;
+        $vendorDir = $env['vendor-dir'] ?? false;
+
+        if (!$vendorDir) {
+            return;
+        }
+
+        $vendorDir .= '/' . self::TRUSTED_VENDOR;
+
+        if (!is_dir($vendorDir)) {
+            return;
+        }
 
         echo "\n Action: $action\n";
 
